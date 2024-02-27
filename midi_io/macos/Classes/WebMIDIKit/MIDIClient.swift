@@ -28,8 +28,8 @@ internal final class MIDIClient : Equatable, Comparable, Hashable {
         OSAssert(MIDIClientDispose(ref))
     }
 
-    var hashValue: Int {
-        return ref.hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(ref)
     }
 
     static func ==(lhs: MIDIClient, rhs: MIDIClient) -> Bool {

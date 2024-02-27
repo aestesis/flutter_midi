@@ -106,8 +106,8 @@ public class MIDIPort : Equatable, Comparable, Hashable, CustomStringConvertible
         return lhs.endpoint < rhs.endpoint
     }
 
-    public final var hashValue: Int {
-        return endpoint.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(endpoint)
     }
 
     public final var description: String {

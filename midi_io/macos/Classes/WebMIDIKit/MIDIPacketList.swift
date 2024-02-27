@@ -53,7 +53,7 @@ extension MIDIPacket {
 
         timeStamp = timestamp
 
-        var d = Data(data)
+        let d = Data(data)
         length = UInt16(d.count)
 
         /// write out bytes to data
@@ -92,8 +92,7 @@ extension MIDIPacketList: Sequence {
         return AnyIterator {
             defer {
                 p = MIDIPacketNext(&p).pointee
-            }
-
+            }            
             return i.next().map { _ in .init(packet: &p) }
         }
     }

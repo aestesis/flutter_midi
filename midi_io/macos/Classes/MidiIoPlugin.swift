@@ -121,7 +121,6 @@ public class MidiIoPlugin: NSObject, FlutterPlugin {
     
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        
         if (call.method==(Constants.GET_DESTINATIONS)) {
             self.getDestinations(call: call, result: result);
         } else if (call.method==(Constants.GET_SOURCES)) {

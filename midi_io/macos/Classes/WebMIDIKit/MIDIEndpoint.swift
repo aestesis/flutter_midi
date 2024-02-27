@@ -32,8 +32,8 @@ internal class MIDIEndpoint : Equatable, Comparable, Hashable {
         return lhs.id < rhs.id
     }
 
-    final var hashValue: Int {
-        return id
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 
     final var id: Int {
